@@ -1,8 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import CustomButton from '../components/CustomButton'
+import { Dimensions } from "react-native";
 
 const AppSettings = () => {
+    const { width, height } = Dimensions.get("window");
 
     const onChangePasswordPressed = () => {
         console.alert('Change Pass');
@@ -19,12 +21,16 @@ const AppSettings = () => {
 
     return (
         <View style={{
+            height: height,
+            width: width,
+        }}>
+        <View style={{
             backgroundColor: "#FFF",
             flex: 1
         }}>
             <View style={{
                 backgroundColor: "orange",
-                height: "20%",
+                height: "23%",
                 borderBottomLeftRadius: 20,
                 borderBottomRightRadius: 20,
                 paddingHorizontal: 20
@@ -32,7 +38,7 @@ const AppSettings = () => {
                 <View style={{
                     flexDirection: "row",
                     alignItems: "center",
-                    //marginTop:25,
+                    marginTop:25,
                     width: "100%"
                 }}>
                     <View style={{ width: "100%" }}>
@@ -76,6 +82,7 @@ const AppSettings = () => {
                     />
                 </View>
             </View>
+        </View>
         </View>
     )
 }

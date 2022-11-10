@@ -5,6 +5,7 @@ import CustomButton from '../components/CustomButton';
 import CustomInput from '../components/CustomInput';
 import Home from './Home';
 import ForgotPassword from './ForgotPassword';
+import { Dimensions } from "react-native";
 
 const SignIn = (props) => {
     const [ modelno, setModelno] = useState('');
@@ -29,8 +30,19 @@ const SignIn = (props) => {
         console.warn('onPrivacyPolicyPressed');
     };
 
+    const { wp, hp } = Dimensions.get("window");
+
   return (
-    <View style={styles.root}>
+    <View style={{
+        height: hp,
+                width: wp,
+                flex:1,
+    }}>
+    <View style={{
+        backgroundColor:'#FFF',
+        alignItems: 'center',
+        padding: 30,
+    }}>
       <Image source = {Logo} 
        style = {[styles.logo, {height: height * 0.3}]} resizeMode = "contain"/>
 
@@ -50,8 +62,8 @@ const SignIn = (props) => {
        setvalue={setPassword}
        />
        <Text>By Registering, you confirm that you accept our {''}
-    <Text style={styles.link} onPress={onTermsOfUsePressed}>Terms of Use</Text> and {''}
-    <Text style={styles.link} onPress={onPrivacyPolicyPressed}>Privacy Policy.</Text>
+    <Text style={{color:'blue'}} onPress={onTermsOfUsePressed}>Terms of Use</Text> and {''}
+    <Text style={{color:'blue'}} onPress={onPrivacyPolicyPressed}>Privacy Policy.</Text>
     </Text>
        <CustomButton 
     text="Sign In" 
@@ -67,23 +79,17 @@ const SignIn = (props) => {
     fgColor='black' 
     />
     </View>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
-    root: {
-        alignItems: 'center',
-        padding: 30,
-    },
     logo:{
         marginTop: 70,
         width : '70%' , 
         maxHeight : 200 ,
         maxWidth: 300,
         marginLeft:60,
-    },
-    link:{
-        color:'blue',
     },
 });
 

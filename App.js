@@ -28,7 +28,7 @@ import Splash from './src/screens/Splash';
     // <MyStack>
     //    <SignIn/>
     //  </MyStack>
-     <Home/>
+     <Profile/>
   );
  }
 

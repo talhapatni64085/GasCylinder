@@ -4,6 +4,7 @@ import CustomButton from '../components/CustomButton';
 import CustomInput from '../components/CustomInput';
 import Icon from 'react-native-vector-icons/Entypo'
 import { useState } from 'react';
+import { Dimensions } from "react-native";
 
 const Profile = () => {
     const onAppSettingPressed = () => {
@@ -11,14 +12,20 @@ const Profile = () => {
     };
     const [mobileno, setMobileno] = useState('');
 
+    const { width, height } = Dimensions.get("window");
+
     return (
+        <View style={{
+            height: height,
+        width: width,
+        }}>
         <View style={{
             backgroundColor: "#FFF",
             flex: 1
         }}>
             <View style={{
                 backgroundColor: "orange",
-                height: "40%",
+                height: "45%",
                 borderBottomLeftRadius: 20,
                 borderBottomRightRadius: 20,
                 paddingHorizontal: 20
@@ -26,7 +33,7 @@ const Profile = () => {
                 <View style={{
                     flexDirection: "row",
                     alignItems: "center",
-                    //marginTop:25,
+                    marginTop:25,
                     width: "100%"
                 }}>
                     <View style={{ width: "100%" }}>
@@ -34,7 +41,7 @@ const Profile = () => {
                             fontSize: 28,
                             color: "#FFF",
                             fontWeight: "bold",
-                            marginTop: 80,
+                            marginTop: '15%',
                         }}>Profile</Text>
                         <View style={{ width: "100%", alignItems: 'flex-start', marginTop: '10%' }}>
                             <Icon
@@ -46,12 +53,13 @@ const Profile = () => {
                                     fontSize: 20,
                                     color: "#FFF",
                                     fontWeight: "bold",
-                                    marginTop: -110,
+                                    marginTop: -105,
+                                    flexDirection:'row'
                                 }}>Muhammad Humayun Khalid
                                 </Text>
                                 <TextInput
-                                    value={value}
-                                    onChangeText={setvalue}
+                                    value={mobileno}
+                                    onChangeText={setMobileno}
                                     placeholder='Enter Your Mobile No'
                                     style={{
                                         backgroundColor: 'white',
@@ -82,6 +90,7 @@ const Profile = () => {
                     fgColor='black'
                 />
             </View>
+        </View>
         </View>
     )
 }

@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text} from 'react-native';
 import { useState } from 'react';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp} from "react-native-responsive-screen";
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Weight from 'react-native-vector-icons/FontAwesome5'
 import Battery from 'react-native-vector-icons/Entypo'
 import Cylinder from 'react-native-vector-icons/MaterialCommunityIcons'
 import SelectList from 'react-native-dropdown-select-list'
-import { Dimensions } from 'react-native';
+import { Dimensions } from "react-native";
 
 const Home = () => {
   
@@ -19,16 +20,19 @@ const Home = () => {
   {key:'4',value:'RMX-00004'},
   {key:'5',value:'RMX-00005'}];
 
-  const {width, height} = Dimensions.get('window');
-
+  const { width, height } = Dimensions.get("window");
   return (
+    <View style={{
+      height: height,
+        width: width,
+    }}>
     <View style={{
       backgroundColor: "#FFF",
       flex: 1,
     }}>
       <View style={{
         backgroundColor: "orange",
-        height: "30%",
+        height: "45%",
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
         paddingHorizontal: 20
@@ -45,9 +49,9 @@ const Home = () => {
         </View>
         <View style={{
           flexDirection: "row",
-          alignItems: "center",
-          marginTop: 60,
-          width: "100%"
+          alignItems: 'center',
+          marginTop: '20%',
+          width: "100%",
         }}>
           <View style={{ width: "100%" }}>
             <Text style={{
@@ -60,10 +64,14 @@ const Home = () => {
           </View>
         </View>
 
-        <View style={{ marginTop: 30 }}>
+        <View style={{ marginTop: '10%' }}>
         <SelectList setSelected={setSelected} data={data} onSelect={() => alert(selected)} />
         </View>
 
+        <View style={{
+          alignItems:'center',
+          marginTop:'10%',
+        }}>
         <View style={{
           height: 130,
           flexDirection: "row",
@@ -135,7 +143,8 @@ const Home = () => {
         </View>
       </View>
     </View>
-
+    </View>
+    </View>
 
   );
 }

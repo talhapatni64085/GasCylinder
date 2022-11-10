@@ -1,9 +1,16 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
+import { Dimensions } from "react-native";
 
 const TermsConditions = () => {
+    const { width, height } = Dimensions.get("window");
+
     return (
+        <View style={{
+            height: height,
+                width: width,
+        }}>
         <ScrollView>
         <View style={{
             backgroundColor: "#FFF",
@@ -11,7 +18,7 @@ const TermsConditions = () => {
         }}>
             <View style={{
                 backgroundColor: "orange",
-                height: "20%",
+                height: "23%",
                 borderBottomLeftRadius: 20,
                 borderBottomRightRadius: 20,
                 paddingHorizontal: 20,
@@ -65,9 +72,9 @@ const TermsConditions = () => {
                     </View>
                 </View>
                 </View>
-                
                 </View>
                 </ScrollView>
+                </View>
       )
 }
 

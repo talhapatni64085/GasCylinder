@@ -1,11 +1,19 @@
 import { View, Text, StyleSheet, Image, useWindowDimensions} from 'react-native'
 import React from 'react'
 import Logo from '../../assets/images/logo_1.png'
+import { Dimensions } from "react-native";
 
 const Splash = () => {
     const{height} = useWindowDimensions();
 
+    const { wp, hp } = Dimensions.get("window");
+
   return (
+    <View style={{
+        height: hp,
+                width: wp,
+                flex:1,
+    }}>
     <View style={{
         flex:1,
         backgroundColor:'white',
@@ -18,6 +26,7 @@ const Splash = () => {
        resizeMode = "contain"
        />
         </View>
+    </View>
     </View>
   )
 }

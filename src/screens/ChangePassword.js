@@ -3,8 +3,10 @@ import React from 'react'
 import CustomInput from '../components/CustomInput'
 import CustomButton from '../components/CustomButton'
 import { useState } from 'react'
+import { Dimensions } from "react-native";
 
 const ChangePassword = () => {
+    const { width, height } = Dimensions.get("window");
 
     const [ oldpass, setOldpass] = useState('');
     const [ newpass, setNewpass] = useState('');
@@ -16,12 +18,16 @@ const ChangePassword = () => {
 
   return (
     <View style={{
+        height: height,
+        width: width,
+    }}>
+    <View style={{
         backgroundColor: "#FFF",
         flex: 1
     }}>
         <View style={{
             backgroundColor: "orange",
-            height: "20%",
+            height: "23%",
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             paddingHorizontal: 20,
@@ -30,7 +36,7 @@ const ChangePassword = () => {
             <View style={{
                 flexDirection: "row",
                 alignItems: "center",
-                //marginTop:25,
+                marginTop:25,
                 width: "100%"
             }}>
                 <View style={{ width: "100%" }}>
@@ -68,7 +74,7 @@ const ChangePassword = () => {
     />
     </View>
             </View>
-            
+            </View>
             </View>
   )
 }

@@ -3,6 +3,7 @@ import React from 'react'
 import CustomInput from '../components/CustomInput'
 import CustomButton from '../components/CustomButton'
 import { useState } from 'react'
+import { Dimensions } from "react-native";
 
 const ForgotPassword = (props) => {
 
@@ -12,7 +13,13 @@ const ForgotPassword = (props) => {
         console.log('Verified! Check Your Email');
     };
 
+    const { width, height } = Dimensions.get("window");
+
     return (
+        <View style={{
+            height: height,
+              width: width,
+          }}>
         <View style={{
             backgroundColor: "#FFF",
             flex: 1
@@ -55,7 +62,7 @@ const ForgotPassword = (props) => {
         />
         </View>
                 </View>
-                
+                </View>
                 </View>
       )
     }

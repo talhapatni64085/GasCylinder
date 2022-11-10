@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, FlatList, data } from 'react-native'
 import React, { useState } from 'react'
+import { Dimensions } from "react-native";
 
 const Notifications = () => {
 const [notification,setNotification]=useState([
@@ -13,15 +14,20 @@ const [notification,setNotification]=useState([
     {name: 'Talha', id: '8'},
 ]);
 
+const { width, height } = Dimensions.get("window");
+
   return (
-    
+    <View style={{
+        height: height,
+          width: width,
+      }}>
     <View style={{
         backgroundColor: "#FFF",
         flex: 1
     }}>
         <View style={{
             backgroundColor: "orange",
-            height: "20%",
+            height: "23%",
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             paddingHorizontal: 20
@@ -55,7 +61,7 @@ const [notification,setNotification]=useState([
                 }}>{item.name}</Text>
             )}
             />
-
+</View>
             </View>
   )
 }
