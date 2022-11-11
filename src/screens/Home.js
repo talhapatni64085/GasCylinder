@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Text} from 'react-native';
-import { useState } from 'react';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp} from "react-native-responsive-screen";
+import { View, Text, TouchableOpacity} from 'react-native';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Weight from 'react-native-vector-icons/FontAwesome5'
@@ -10,7 +8,7 @@ import Cylinder from 'react-native-vector-icons/MaterialCommunityIcons'
 import SelectList from 'react-native-dropdown-select-list'
 import { Dimensions } from "react-native";
 
-const Home = () => {
+const Home = (props) => {
   
   const [selected, setSelected] = React.useState("");
   
@@ -37,15 +35,23 @@ const Home = () => {
         borderBottomRightRadius: 20,
         paddingHorizontal: 20
       }}>
-        <View style={{ width: "100%", alignItems: 'flex-start', marginTop: '20%' }}>
+        <View style={{ width: "50%", alignItems: 'flex-start', marginTop: '20%' }}>
+        <TouchableOpacity
+        onPress={() => props.navigation.navigate('Profile')} 
+        >
           <Icons
             name='face-man-profile' size={30} color='white'
           />
+        </TouchableOpacity>
         </View>
         <View style={{ width: "100%", alignItems: 'flex-end', marginTop: -28 }}>
+        <TouchableOpacity
+         onPress={() => props.navigation.navigate('Notifications')}
+         >
           <Icon
             name='notifications' size={30} color='white'
           />
+        </TouchableOpacity>
         </View>
         <View style={{
           flexDirection: "row",

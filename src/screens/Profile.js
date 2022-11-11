@@ -5,10 +5,11 @@ import CustomInput from '../components/CustomInput';
 import Icon from 'react-native-vector-icons/Entypo'
 import { useState } from 'react';
 import { Dimensions } from "react-native";
+import AppSettings from './AppSettings';
 
-const Profile = () => {
+const Profile = (props) => {
     const onAppSettingPressed = () => {
-        console.alert('sigin');
+        props.navigation.navigate(AppSettings)
     };
     const [mobileno, setMobileno] = useState('');
 

@@ -2,21 +2,25 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import CustomButton from '../components/CustomButton'
 import { Dimensions } from "react-native";
+import ChangePassword from './ChangePassword';
+import AboutUs from './AboutUs';
+import ContactUs from './ContactUs';
+import SignIn from './SignIn';
 
-const AppSettings = () => {
+const AppSettings = (props) => {
     const { width, height } = Dimensions.get("window");
 
     const onChangePasswordPressed = () => {
-        console.alert('Change Pass');
+        props.navigation.navigate(ChangePassword)
     };
     const onAboutUsPressed = () => {
-        console.alert('About Us');
+        props.navigation.navigate(AboutUs)
     };
     const onContactUsPressed = () => {
-        console.alert('Contact Us');
+        props.navigation.navigate(ContactUs)
     };
     const onLogOutPressed = () => {
-        console.alert('LogOut');
+        props.navigation.navigate(SignIn)
     };
 
     return (

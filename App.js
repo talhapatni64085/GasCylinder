@@ -18,17 +18,10 @@ import Splash from './src/screens/Splash';
  const App = () => {
 
   return (
-    // <NavigationContainer theme={theme}>
-    //   <stack.Navigator screenOptions={{headerShown: false}}
-    //   initialRouteName='SignIn'>
-    //     <stack.Screen name='SignIn' component={SignIn}/>
-    //     <stack.Screen name='Home' component={Home}/>
-    //   </stack.Navigator>
-    // </NavigationContainer>
-    // <MyStack>
-    //    <SignIn/>
-    //  </MyStack>
-     <Profile/>
+    <MyStack>
+       <SignIn/>
+     </MyStack>
+    //  <SignIn/>
   );
  }
 

@@ -3,7 +3,7 @@ import React from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Dimensions } from "react-native";
 
-const TermsConditions = () => {
+const TermsConditions = (props) => {
     const { width, height } = Dimensions.get("window");
 
     return (

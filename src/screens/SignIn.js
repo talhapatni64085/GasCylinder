@@ -6,6 +6,8 @@ import CustomInput from '../components/CustomInput';
 import Home from './Home';
 import ForgotPassword from './ForgotPassword';
 import { Dimensions } from "react-native";
+import TermsConditions from './TermsConditions';
+import PrivacyPolicy from './PrivacyPolicy';
 
 const SignIn = (props) => {
     const [ modelno, setModelno] = useState('');
@@ -14,7 +16,7 @@ const SignIn = (props) => {
 
     const{height} = useWindowDimensions();
 
-    const onSignInPressed = (props) => {
+    const onSignInPressed = () => {
         props.navigation.navigate(Home)
     };
 
@@ -23,11 +25,11 @@ const SignIn = (props) => {
     };
 
     const onTermsOfUsePressed = () => {
-        console.warn('onTermsOfUsePressed');
+        props.navigation.navigate(TermsConditions)
     };
 
     const onPrivacyPolicyPressed = () => {
-        console.warn('onPrivacyPolicyPressed');
+        props.navigation.navigate(PrivacyPolicy)
     };
 
     const { wp, hp } = Dimensions.get("window");
@@ -42,6 +44,7 @@ const SignIn = (props) => {
         backgroundColor:'#FFF',
         alignItems: 'center',
         padding: 30,
+        flex:1,
     }}>
       <Image source = {Logo} 
        style = {[styles.logo, {height: height * 0.3}]} resizeMode = "contain"/>
